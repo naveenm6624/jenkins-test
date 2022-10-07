@@ -3,7 +3,11 @@ provider "google" {
     project = "sturdy-ranger-355706"
   
 }
-
+resource "google_compute_network" "vpc_network" {
+  name                    = "vpc-networktest 9876"
+  auto_create_subnetworks = true
+  mtu                     = 1460
+}
 
 
 resource "google_storage_bucket" "auto-expire" {
